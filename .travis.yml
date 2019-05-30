@@ -6,4 +6,4 @@ before_install:
   - docker build -t wmhgit/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run wmhgit/docker-react npm run test -- --coverage
+  - docker run -e CI=true wmhgit/docker-react npm run test -- --watchAll=false
